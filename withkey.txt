@@ -1,0 +1,86 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))() --This Will Load The Script Code
+local Player = game.Players.LocalPlayer --This Will Reveal The Player Name
+  local Window = OrionLib:MakeWindow({
+		Name = "make me moni mafaka",
+		HidePremium = false,
+		SaveConfig = true,
+		ConfigFolder = "OrionTest",
+        IntroText = "moni maker"       
+}) --This Will Load The Script Hub
+
+function MakeScriptHub()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/levy-droid/Apashow/main/niccole.txt"))() --Put The Script That Will Load If The Key Is Correct Here
+end
+
+OrionLib:MakeNotification({
+	Name = "loaded bc ur phone is not potato ",
+	Content = "You need key mafaka "..Player.Name..".",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+}) --Notification
+
+getgenv().Key = "LEVIKING" --Put The Correct Key Here
+getgenv().KeyInput = "string" --Require For The Key To Work
+
+local Tab = Window:MakeTab({
+	Name = "Key",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+}) --Making A Tab
+
+Tab:AddTextbox({
+	Name = "Key",
+	Default = "enter key here mafaka.",
+	TextDisappear = true,
+	Callback = function(Value)
+		getgenv().KeyInput = Value
+	end	  
+}) --You Will Enter The Key Here
+
+Tab:AddButton({
+    Name = "Check Key",
+    Callback = function()
+        if getgenv().KeyInput == getgenv().Key then
+            OrionLib:MakeNotification({
+                Name = "Checking moni",
+                Content = "Checking if you give me moni or try to scam me",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Nice",
+                Content = "Thanks for da money blud",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(1)
+            OrionLib:Destroy()
+            wait(.3)
+            MakeScriptHub()
+        else
+           OrionLib:MakeNotification({
+                Name = "Checking moni",
+                Content = "Checking if you give me moni or try to scam me",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+            wait(2)
+            OrionLib:MakeNotification({
+                Name = "Incorrect Key!",
+                Content = "get me money blud :(((",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+        end
+    end
+}) --This Will Check The Key You Entered
+
+Tab:AddButton({
+	Name = "Copy Key",
+	Callback = function()
+      		setclipboard("https://shrinkme.org/Levikey") --This Will Copy The Link Of The Key
+  	end    
+}) 
+    
+OrionLib:Init() --Require If The Script Is Done
